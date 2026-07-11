@@ -1,20 +1,22 @@
-.modalContent {
-    background: rgba(22, 27, 35, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.modalHeader {
+.botButton {
+    min-height: 42px;
+    padding-inline: 20px;
+    color: #16130f;
     background: transparent;
+    border: 1px solid #16130f;
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.modalTitle {
-    font-weight: 600;
-    color: white;
+.botButton:hover {
+    color: #f4ede3;
+    background: #16130f;
 }
 
-.actionIcon {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+@media (max-width: 30em) {
+    .botButton {
+        min-height: 38px;
+        padding-inline: 14px;
+        font-size: 12px;
+    }
 }

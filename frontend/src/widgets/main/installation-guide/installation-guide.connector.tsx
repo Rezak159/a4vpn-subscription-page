@@ -62,6 +62,7 @@ export const InstallationGuideConnector = (props: IProps) => {
 
     const platformApps = platforms[selectedPlatform]!.apps
     const selectedApp = platformApps[selectedAppIndex] ?? platformApps[0]
+    const guideBlocks = selectedApp?.blocks.slice(0, 2) ?? []
 
     const availablePlatforms = (
         Object.entries(hasPlatformApps) as [TSubscriptionPagePlatformKey, boolean][]
@@ -151,11 +152,11 @@ export const InstallationGuideConnector = (props: IProps) => {
     const getIcon = (iconKey: string) => getIconFromLibrary(iconKey, svgLibrary)
 
     return (
-        <Card p={{ base: 'sm', xs: 'md', sm: 'lg', md: 'xl' }} radius="lg">
+        <Card className={classes.guideCard} p={0} radius={0}>
             <Stack gap="md">
                 <Group gap="sm" justify="space-between">
-                    <Title c="white" fw={600} order={4}>
-                        {t(baseTranslations.installationGuideHeader)}
+                    <Title className={classes.guideTitle} fw={700} order={4}>
+                        Выберите приложение
                     </Title>
 
                     {availablePlatforms.length > 1 && (
@@ -205,8 +206,7 @@ export const InstallationGuideConnector = (props: IProps) => {
                                     <UnstyledButton
                                         className={clsx(
                                             classes.appButton,
-                                            isActive && classes.appButtonActive,
-                                            app.featured && classes.appButtonFeatured
+                                            isActive && classes.appButtonActive
                                         )}
                                         key={app.name}
                                         onClick={() => {
@@ -214,7 +214,6 @@ export const InstallationGuideConnector = (props: IProps) => {
                                             setSelectedAppIndex(index)
                                         }}
                                     >
-                                        {app.featured && <span className={classes.featuredBadge} />}
                                         {hasIcon && (
                                             <span
                                                 className={clsx(
@@ -237,10 +236,11 @@ export const InstallationGuideConnector = (props: IProps) => {
 
                         {selectedApp && (
                             <BlockRenderer
-                                blocks={selectedApp.blocks}
+                                blocks={guideBlocks}
                                 currentLang={currentLang}
                                 getIconFromLibrary={getIcon}
                                 isMobile={isMobile}
+                                key={`${selectedPlatform}-${selectedAppIndex}`}
                                 renderBlockButtons={renderBlockButtons}
                                 svgLibrary={svgLibrary}
                             />

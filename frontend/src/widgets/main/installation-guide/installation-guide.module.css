@@ -1,30 +1,51 @@
+.guideCard {
+    padding: 0;
+    color: #16130f;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    transition: none;
+}
+
+.guideCard:hover {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.guideTitle {
+    color: #16130f;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+}
+
 .appsGrid {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: var(--mantine-spacing-md);
+    margin-bottom: 18px;
 }
 
 .appButton {
     position: relative;
     display: flex;
     align-items: center;
-    flex: 1 1 auto;
-    padding: 0 48px 0 16px;
-    height: 48px;
+    flex: 0 1 auto;
+    padding: 0 20px;
+    height: 44px;
     min-width: 0;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 3px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--mantine-radius-md);
+    background: #f4ede3;
+    border: 1px solid rgb(22, 19, 15, 0.14);
+    border-left: 1px solid rgb(22 19 15 / 14%);
+    border-radius: 0;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .appButton:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-left-color: rgba(255, 255, 255, 0.25);
+    background: #e7ddcf;
+    border-left-color: #16130f;
 }
 
 .appButton:hover .bgIcon {
@@ -33,16 +54,14 @@
 
 .appButtonActive,
 .appButtonActive:hover {
-    background: linear-gradient(90deg, rgba(34, 211, 238, 0.12) 0%, rgba(34, 211, 238, 0.04) 100%);
-    border-color: rgba(34, 211, 238, 0.2);
-    border-left-color: var(--mantine-color-cyan-5);
-    box-shadow:
-        inset 4px 0 12px -4px rgba(34, 211, 238, 0.3),
-        0 0 12px rgba(34, 211, 238, 0.1);
+    background: #16130f;
+    border-color: #16130f;
+    border-left: 4px solid #c81e26;
+    box-shadow: none;
 }
 
 .appButtonActive .appName {
-    color: var(--mantine-color-cyan-3);
+    color: #f4ede3;
 }
 
 .appButtonActive .bgIcon,
@@ -51,6 +70,7 @@
 }
 
 .bgIcon {
+    display: none;
     position: absolute;
     right: -12px;
     top: 50%;
@@ -83,28 +103,22 @@
 .appName {
     position: relative;
     z-index: 1;
-    color: rgba(255, 255, 255, 0.85);
+    color: #16130f;
     font-size: var(--mantine-font-size-md);
     font-weight: 600;
     white-space: nowrap;
 }
 
-.featuredBadge {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 8px;
-    height: 8px;
-    display: inline-block;
-    opacity: 1;
-    z-index: 0;
-    border-radius: 50%;
-    background: #efbf04;
+@media (max-width: 30em) {
+    .guideCard {
+        padding: 0;
+    }
 
-    box-shadow: 0 0 6px rgba(239, 191, 4, 0.6);
-}
+    .appsGrid {
+        display: flex;
+    }
 
-.appButtonActive .featuredBadge {
-    opacity: 0.8;
-    box-shadow: 0 0 8px rgba(239, 191, 4, 0.4);
+    .appButton {
+        flex: 1;
+    }
 }

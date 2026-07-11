@@ -2,9 +2,8 @@ import { Accordion, Group, Stack, Text } from '@mantine/core'
 import { IconChevronDown } from '@tabler/icons-react'
 import { useState } from 'react'
 
-import { getColorGradient, getLocalizedText } from '@shared/utils/config-parser'
+import { getLocalizedText } from '@shared/utils/config-parser'
 import { vibrate } from '@shared/utils/vibrate'
-import { ThemeIconShared } from '@shared/ui'
 
 import { IBlockRendererProps } from '../renderer-block.interface'
 import classes from './accordion-block.module.css'
@@ -13,8 +12,7 @@ export const AccordionBlockRenderer = ({
     blocks,
     isMobile,
     currentLang,
-    renderBlockButtons,
-    getIconFromLibrary
+    renderBlockButtons
 }: IBlockRendererProps) => {
     const [openedAccordion, setOpenedAccordion] = useState<null | string>('0')
 
@@ -38,22 +36,16 @@ export const AccordionBlockRenderer = ({
             variant="separated"
         >
             {blocks.map((block, index) => {
-                const gradientStyle = getColorGradient(block.svgIconColor)
-
                 return (
                     <Accordion.Item key={index} value={String(index)}>
                         <Accordion.Control>
                             <Group gap="sm" wrap="nowrap">
-                                <ThemeIconShared
-                                    getIconFromLibrary={getIconFromLibrary}
-                                    gradientStyle={gradientStyle}
-                                    isMobile={isMobile}
-                                    svgIconColor={block.svgIconColor}
-                                    svgIconKey={block.svgIconKey}
-                                />
+                                <span className={classes.stepNumber}>
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
                                 <Stack gap={2} style={{ flex: 1, minWidth: 0 }}>
                                     <Text
-                                        c="white"
+                                        c="dark.8"
                                         dangerouslySetInnerHTML={{
                                             __html: getLocalizedText(block.title, currentLang)
                                         }}
@@ -70,7 +62,7 @@ export const AccordionBlockRenderer = ({
                         </Accordion.Control>
                         <Accordion.Panel>
                             <Text
-                                c="dimmed"
+                                c="dark.5"
                                 dangerouslySetInnerHTML={{
                                     __html: getLocalizedText(block.description, currentLang)
                                 }}

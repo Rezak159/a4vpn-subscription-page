@@ -1,31 +1,32 @@
 .accordionItem {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #f4ede3;
+    border: 1px solid rgb(22 19 15 / 16%);
+    border-radius: 0;
 }
 
 .accordionItem[data-active] {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(34, 211, 238, 0.3);
+    background: #fffaf2;
+    border-color: #16130f;
 }
 
 .accordionControl {
     padding: var(--mantine-spacing-sm) var(--mantine-spacing-md);
-    border-radius: var(--mantine-radius-lg);
+    border-radius: 0;
 }
 
 .accordionControl:hover {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: var(--mantine-radius-lg);
+    background: #ebe1d3;
+    border-radius: 0;
 }
 
 .accordionChevron {
-    color: var(--mantine-color-dimmed);
+    color: #8a7f70;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
 }
 
 .accordionContent {
-    padding: 0 var(--mantine-spacing-md) var(--mantine-spacing-md);
+    padding: 0 22px 22px 64px;
 
     will-change: height;
     -webkit-backface-visibility: hidden;
@@ -36,10 +37,34 @@
     padding: 0;
 }
 
+.stepNumber {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 34px;
+    height: 34px;
+    color: #f4ede3;
+    background: #16130f;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.accordionItem[data-active] .stepNumber {
+    background: #c81e26;
+}
+
 .stepBadge {
     font-weight: 700;
     font-size: 10px;
     padding: 0 6px;
     min-width: 20px;
     height: 18px;
+}
+
+@media (max-width: 30em) {
+    .accordionContent {
+        padding-left: 58px;
+    }
 }
