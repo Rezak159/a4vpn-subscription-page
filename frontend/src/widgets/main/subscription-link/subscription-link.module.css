@@ -1,20 +1,17 @@
-.modalContent {
-    background: rgba(22, 27, 35, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.botButton {
+    border: 1px solid var(--ink);
+    box-shadow: 3px 3px 0 rgb(22, 19, 15, 0.12);
+    transition:
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
 }
 
-.modalHeader {
-    background: transparent;
+.botButton:hover {
+    box-shadow: 5px 5px 0 rgb(22, 19, 15, 0.18);
+    transform: translate(-1px, -1px);
 }
 
-.modalTitle {
-    font-weight: 600;
-    color: white;
-}
-
-.actionIcon {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.botButton:active {
+    box-shadow: 1px 1px 0 rgb(22, 19, 15, 0.18);
+    transform: translate(1px, 1px);
 }

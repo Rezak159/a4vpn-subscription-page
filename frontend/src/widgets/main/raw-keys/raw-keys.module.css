@@ -1,8 +1,7 @@
 .modalContent {
-    background: rgba(22, 27, 35, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--card);
+    border: 1px solid var(--ink);
+    box-shadow: 8px 8px 0 rgb(22, 19, 15, 0.15);
 }
 
 .modalHeader {
@@ -10,14 +9,21 @@
 }
 
 .modalTitle {
-    font-weight: 600;
-    color: white;
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--ink);
 }
 
 .keyBox {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: var(--mantine-radius-md);
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-left: 3px solid var(--ink);
+    transition: border-color 0.15s ease;
+}
+
+.keyBox:hover {
+    border-color: var(--ink);
+    border-left-color: var(--accent);
 }
 
 .keyRow {

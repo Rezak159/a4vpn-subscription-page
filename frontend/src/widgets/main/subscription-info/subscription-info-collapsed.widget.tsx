@@ -82,8 +82,7 @@ export const SubscriptionInfoCollapsedWidget = ({ isMobile }: IProps) => {
 
                         <Stack gap={0} style={{ minWidth: 0, flex: 1 }}>
                             <Text
-                                c="white"
-                                fw={600}
+                                fw={700}
                                 size={isMobile ? 'sm' : 'md'}
                                 style={{
                                     overflow: 'hidden',

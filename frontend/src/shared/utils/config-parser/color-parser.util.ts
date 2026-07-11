@@ -15,7 +15,7 @@ const COLORS: Record<string, [number, number, number]> = {
     dark: [55, 58, 64]
 }
 
-const DEFAULT_COLOR = COLORS.cyan
+const DEFAULT_COLOR: [number, number, number] = [200, 30, 38]
 
 const hexToRgb = (hex: string): [number, number, number] | null => {
     const match = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
@@ -34,19 +34,20 @@ export interface ColorGradientStyle {
 export const getColorGradient = (color: string): ColorGradientStyle => {
     const [r, g, b] = getRgb(color)
     return {
-        background: `linear-gradient(135deg, rgba(${r},${g},${b},0.15) 0%, rgba(${r},${g},${b},0.08) 100%)`,
-        border: `1px solid rgba(${r},${g},${b},0.3)`
+        background: `rgba(${r},${g},${b},0.1)`,
+        border: `1px solid rgba(${r},${g},${b},0.45)`
     }
 }
 
+// Solid variant: color mixed into the paper background so icons cover
+// underlying elements (e.g. the timeline line) without transparency.
 export const getColorGradientSolid = (color: string): ColorGradientStyle => {
     const [r, g, b] = getRgb(color)
-    const dark1 = [22 + r * 0.08, 27 + g * 0.08, 35 + b * 0.08].map(Math.floor)
-    const dark2 = [20 + r * 0.05, 24 + g * 0.05, 30 + b * 0.05].map(Math.floor)
+    const paper = [244, 237, 227]
+    const mixed = [r, g, b].map((c, i) => Math.round(paper[i] + (c - paper[i]) * 0.14))
 
     return {
-        background: `linear-gradient(135deg, rgb(${dark1}) 0%, rgb(${dark2}) 100%)`,
-        border: `1px solid rgba(${r},${g},${b},0.4)`,
-        boxShadow: `inset 0 0 20px rgba(${r},${g},${b},0.15)`
+        background: `rgb(${mixed})`,
+        border: `1px solid rgba(${r},${g},${b},0.5)`
     }
 }

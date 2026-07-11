@@ -1,0 +1,11 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+        {
+            "name": "subscription-page",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "start:dev", "--prefix", "frontend"],
+            "port": 3334
+        }
+    ]
+}

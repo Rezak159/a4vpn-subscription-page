@@ -56,15 +56,18 @@ export function LanguagePicker(props: IProps) {
                     radius="md"
                     size="xl"
                     style={{
-                        background: 'rgba(255, 255, 255, 0.02)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)'
+                        background: 'transparent',
+                        border: '1px solid var(--line-strong)',
+                        color: 'var(--muted)'
                     }}
                     variant="default"
                 >
                     <IconLanguage size={22} />
                 </ActionIcon>
             </Menu.Target>
-            <Menu.Dropdown mah={250} style={{ overflowY: 'auto' }}>{items}</Menu.Dropdown>
+            <Menu.Dropdown mah={250} style={{ overflowY: 'auto' }}>
+                {items}
+            </Menu.Dropdown>
         </Menu>
     )
 }
