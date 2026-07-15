@@ -14,7 +14,10 @@ export const AccordionBlockRenderer = ({
     currentLang,
     renderBlockButtons
 }: IBlockRendererProps) => {
-    const [openedAccordion, setOpenedAccordion] = useState<null | string>('0')
+    // Все шаги раскрыты по умолчанию — инструкцию проходят подряд, прятать шаги незачем
+    const [openedAccordions, setOpenedAccordions] = useState<string[]>(() =>
+        blocks.map((_, index) => String(index))
+    )
 
     return (
         <Accordion
@@ -26,13 +29,14 @@ export const AccordionBlockRenderer = ({
                 content: classes.accordionContent,
                 label: classes.accordionLabel
             }}
+            multiple
             onChange={(value) => {
                 vibrate('tap')
-                setOpenedAccordion(value)
+                setOpenedAccordions(value)
             }}
             radius="lg"
             transitionDuration={200}
-            value={openedAccordion}
+            value={openedAccordions}
             variant="separated"
         >
             {blocks.map((block, index) => {
@@ -40,7 +44,13 @@ export const AccordionBlockRenderer = ({
                     <Accordion.Item key={index} value={String(index)}>
                         <Accordion.Control>
                             <Group gap="sm" wrap="nowrap">
-                                <span className={classes.stepNumber}>
+                                <span
+                                    className={
+                                        index === blocks.length - 1
+                                            ? `${classes.stepNumber} ${classes.stepNumberAction}`
+                                            : classes.stepNumber
+                                    }
+                                >
                                     {String(index + 1).padStart(2, '0')}
                                 </span>
                                 <Stack gap={2} style={{ flex: 1, minWidth: 0 }}>
@@ -69,7 +79,7 @@ export const AccordionBlockRenderer = ({
                                 size={isMobile ? 'xs' : 'sm'}
                                 style={{ lineHeight: 1.7 }}
                             />
-                            <Group gap="xs" mt="sm" wrap="wrap">
+                            <Group className={classes.blockButtons} gap="xs" mt="sm" wrap="wrap">
                                 {renderBlockButtons(block.buttons, 'light')}
                             </Group>
                         </Accordion.Panel>

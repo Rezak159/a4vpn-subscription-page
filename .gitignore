@@ -129,7 +129,28 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Claude Code
+.claude/
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editors
+.idea/
+*.swp
+*.swo
+
 .vercel
 stats.html
 fsd-high-level-dependencies.html

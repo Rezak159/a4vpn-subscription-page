@@ -13,9 +13,14 @@
 
 .brand {
     color: #16130f;
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 800;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.01em;
+    text-transform: none;
+}
+
+.brandAccent {
+    color: #c81e26;
 }
 
 .logo {

@@ -20,6 +20,18 @@ interface IMainPageComponentProps {
     platform: TSubscriptionPagePlatformKey | undefined
 }
 
+// Вордмарк как на a4flow.com: строчными, цифры — красным акцентом
+const renderWordmark = (name: string) =>
+    [...name.toLowerCase()].map((char, i) =>
+        /\d/.test(char) ? (
+            <span className={classes.brandAccent} key={i}>
+                {char}
+            </span>
+        ) : (
+            char
+        )
+    )
+
 export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProps) => {
     const config = useAppConfig()
     const currentLang = useCurrentLang()
@@ -63,7 +75,7 @@ export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProp
                                 src="/assets/a4flow-logo.png"
                             />
                             <Title className={classes.brand} order={4}>
-                                {brandName || 'a4vpn'}
+                                {renderWordmark(brandName || 'a4vpn')}
                             </Title>
                         </Group>
 
@@ -99,14 +111,12 @@ export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProp
 
                         <div className={classes.heroContent}>
                             <div>
-                                <Text className={classes.eyebrow}>ВАШ БЫСТРЫЙ ИНТЕРНЕТ</Text>
                                 <Title className={classes.heroTitle} order={1}>
                                     Включил
                                     <br />И <span>забыл</span>
                                 </Title>
                                 <Text className={classes.heroDescription}>
-                                    Одна подписка для всех устройств. Выберите приложение ниже —
-                                    остальное настроится автоматически.
+                                    Подключите устройство ниже – всё настроится автоматически
                                 </Text>
                             </div>
 
@@ -133,10 +143,7 @@ export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProp
                             <div className={classes.sectionHeading}>
                                 <div>
                                     <Title order={2}>Подключите устройство</Title>
-                                    <Text>
-                                        Мы уже определили вашу систему. Выберите приложение и
-                                        следуйте шагам.
-                                    </Text>
+                                    <Text>Выберите ваше устройство и следуйте инструкции.</Text>
                                 </div>
                             </div>
                             <InstallationGuideConnector
@@ -149,8 +156,7 @@ export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProp
                     )}
 
                     <footer className={classes.footer}>
-                        <span>{brandName || 'a4vpn'}</span>
-                        <span>Интернет должен просто работать.</span>
+                        <span>{renderWordmark(brandName || 'a4vpn')} service {new Date().getFullYear()}</span>
                     </footer>
                 </Stack>
             </Container>

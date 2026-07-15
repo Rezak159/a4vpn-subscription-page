@@ -51,8 +51,33 @@
     letter-spacing: 0.04em;
 }
 
-.accordionItem[data-active] .stepNumber {
+/* Последний шаг — целевое действие, выделяем красным */
+.stepNumberAction {
     background: #c81e26;
+}
+
+/* Кнопки скачивания внутри шага: не вылезать за карточку, переносить текст */
+.blockButtons :global(.mantine-Button-root) {
+    max-width: 100%;
+    height: auto;
+    min-height: 42px;
+    padding-block: 8px;
+}
+
+.blockButtons :global(.mantine-Button-label) {
+    white-space: normal;
+    text-align: left;
+}
+
+@media (max-width: 30em) {
+    .blockButtons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .blockButtons :global(.mantine-Button-root) {
+        width: 100%;
+    }
 }
 
 .stepBadge {
