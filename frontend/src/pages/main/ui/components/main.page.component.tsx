@@ -1,11 +1,13 @@
 import { TSubscriptionPagePlatformKey } from '@remnawave/subscription-page-types'
-import { IconArrowDown, IconCheck, IconClock } from '@tabler/icons-react'
 import { Box, Container, Group, Image, Stack, Text, Title } from '@mantine/core'
+import { IconArrowDown } from '@tabler/icons-react'
 import { useEffect } from 'react'
+import dayjs from 'dayjs'
 
 import {
     AccordionBlockRenderer,
     InstallationGuideConnector,
+    SubscriptionKeyWidget,
     SubscriptionLinkWidget
 } from '@widgets/main'
 import { useAppConfig, useAppConfigStoreActions, useCurrentLang } from '@entities/app-config-store'
@@ -18,6 +20,15 @@ import classes from './main.page.module.css'
 interface IMainPageComponentProps {
     isMobile: boolean
     platform: TSubscriptionPagePlatformKey | undefined
+}
+
+const pluralizeDays = (days: number) => {
+    const lastDigit = days % 10
+    const lastTwoDigits = days % 100
+
+    if (lastDigit === 1 && lastTwoDigits !== 11) return 'день'
+    if (lastDigit >= 2 && lastDigit <= 4 && (lastTwoDigits < 10 || lastTwoDigits >= 20)) return 'дня'
+    return 'дней'
 }
 
 // Вордмарк как на a4flow.com: строчными, цифры — красным акцентом
@@ -57,6 +68,11 @@ export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProp
 
     const isActive = subscription.user.userStatus === 'ACTIVE'
     const expiresAt = formatDate(subscription.user.expiresAt, 'ru', config.baseTranslations)
+    const isIndefinite = dayjs(subscription.user.expiresAt).year() === 2099
+    // В заголовке год лишний — он и так почти всегда текущий
+    const expiresAtShort = expiresAt.replace(/,\s*\d{4}$/, '')
+    const daysLeft = dayjs(subscription.user.expiresAt).diff(dayjs(), 'day')
+    const timeLeft = daysLeft < 1 ? 'Меньше суток' : `${daysLeft} ${pluralizeDays(daysLeft)}`
     const traffic =
         subscription.user.trafficLimit === '0'
             ? `${subscription.user.trafficUsed} / ∞`
@@ -96,45 +112,35 @@ export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProp
                 <Stack gap={0}>
                     <section className={classes.hero}>
                         <div aria-hidden="true" className={classes.heroAccent} />
-                        <div className={classes.heroTopline}>
-                            <span
-                                className={isActive ? classes.statusActive : classes.statusInactive}
-                            >
-                                {isActive ? (
-                                    <IconCheck size={14} stroke={3} />
-                                ) : (
-                                    <IconClock size={14} />
-                                )}
-                                {isActive ? 'Подписка активна' : 'Подписка неактивна'}
-                            </span>
-                        </div>
 
-                        <div className={classes.heroContent}>
-                            <div>
-                                <Title className={classes.heroTitle} order={1}>
-                                    Включил
-                                    <br />И <span>забыл</span>
-                                </Title>
-                                <Text className={classes.heroDescription}>
-                                    Подключите устройство ниже – всё настроится автоматически
-                                </Text>
-                            </div>
+                        <Title className={classes.heroTitle} order={1}>
+                            {!isActive && <span>Подписка истекла</span>}
+                            {isActive && isIndefinite && 'Подписка активна'}
+                            {isActive && !isIndefinite && (
+                                <>
+                                    Активна до <span>{expiresAtShort}</span>
+                                </>
+                            )}
+                        </Title>
 
-                            <div className={classes.subscriptionMeta}>
-                                <div className={classes.metaItem}>
-                                    <span className={classes.metaLabel}>Работает до</span>
-                                    <strong>{expiresAt}</strong>
-                                </div>
-                                <div className={classes.metaDivider} />
-                                <div className={classes.metaItem}>
-                                    <span className={classes.metaLabel}>Трафик</span>
-                                    <strong>{traffic}</strong>
-                                </div>
+                        <div className={classes.subscriptionMeta}>
+                            {isActive && !isIndefinite && (
+                                <>
+                                    <div className={classes.metaItem}>
+                                        <span className={classes.metaLabel}>Осталось</span>
+                                        <strong>{timeLeft}</strong>
+                                    </div>
+                                    <div className={classes.metaDivider} />
+                                </>
+                            )}
+                            <div className={classes.metaItem}>
+                                <span className={classes.metaLabel}>Трафик</span>
+                                <strong>{traffic}</strong>
                             </div>
                         </div>
 
-                        <a className={classes.scrollHint} href="#setup">
-                            Настроить устройство <IconArrowDown size={16} />
+                        <a className={classes.heroCta} href="#setup">
+                            Настроить устройство <IconArrowDown size={18} />
                         </a>
                     </section>
 
@@ -155,9 +161,7 @@ export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProp
                         </section>
                     )}
 
-                    <footer className={classes.footer}>
-                        <span>{renderWordmark(brandName || 'a4vpn')} service {new Date().getFullYear()}</span>
-                    </footer>
+                    <SubscriptionKeyWidget />
                 </Stack>
             </Container>
         </Page>

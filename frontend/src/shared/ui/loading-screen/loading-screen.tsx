@@ -6,6 +6,7 @@ export function LoadingScreen({ height = '100%' }: { height?: string }) {
         <Center h={height}>
             <Stack align="center" gap="xs" w="100%">
                 <Spinner
+                    color="#16130f"
                     inner={50}
                     segments={30}
                     size={150}

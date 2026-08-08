@@ -64,6 +64,12 @@
     padding-block: 8px;
 }
 
+/* Иконка всегда на одном месте: без этого содержимое центрируется целиком
+   и у кнопок с текстом в две строки иконка уезжает влево */
+.blockButtons :global(.mantine-Button-inner) {
+    justify-content: flex-start;
+}
+
 .blockButtons :global(.mantine-Button-label) {
     white-space: normal;
     text-align: left;
