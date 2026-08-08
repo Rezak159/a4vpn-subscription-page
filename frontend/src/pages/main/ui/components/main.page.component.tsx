@@ -134,7 +134,7 @@ export const MainPageComponent = ({ isMobile, platform }: IMainPageComponentProp
                                 </>
                             )}
                             <div className={classes.metaItem}>
-                                <span className={classes.metaLabel}>Трафик</span>
+                                <span className={classes.metaLabel}>Использовано</span>
                                 <strong>{traffic}</strong>
                             </div>
                         </div>
