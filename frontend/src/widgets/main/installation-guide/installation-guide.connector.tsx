@@ -11,7 +11,6 @@ import {
     Group,
     NativeSelect,
     Stack,
-    Title,
     UnstyledButton
 } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
@@ -119,33 +118,66 @@ export const InstallationGuideConnector = (props: IProps) => {
         }
     }
 
+    const isAlternativeDownload = (button: TSubscriptionPageButtonConfig) => {
+        if (button.type !== 'external') return false
+
+        const downloadPath = button.link.split(/[?#]/)[0]
+        const isApk = /\.apk$/i.test(downloadPath)
+        const isPortable = /(?:-portable\.zip|\.appimage)$/i.test(downloadPath)
+        const isWindowsArm = selectedPlatform === 'windows' && /arm64/i.test(downloadPath)
+
+        return isApk || isPortable || isWindowsArm
+    }
+
     const renderBlockButtons = (
         buttons: TSubscriptionPageButtonConfig[],
         variant: ButtonVariant
     ) => {
         if (buttons.length === 0) return null
 
+        const primaryButtons = buttons.filter((button) => !isAlternativeDownload(button))
+        const alternativeButtons = buttons.filter(isAlternativeDownload)
+
         return (
-            <Group gap="xs" wrap="wrap">
-                {buttons.map((button, index) => (
-                    <Button
-                        key={index}
-                        leftSection={
-                            <span
-                                dangerouslySetInnerHTML={{
-                                    __html: getIconFromLibrary(button.svgIconKey, svgLibrary)
-                                }}
-                                style={{ display: 'flex', alignItems: 'center' }}
-                            />
-                        }
-                        onClick={() => handleButtonClick(button)}
-                        radius="md"
-                        variant={variant}
-                    >
-                        {t(button.text)}
-                    </Button>
-                ))}
-            </Group>
+            <Stack className={classes.blockActions} gap="xs">
+                {primaryButtons.length > 0 && (
+                    <Group gap="xs" wrap="wrap">
+                        {primaryButtons.map((button, index) => (
+                            <Button
+                                key={index}
+                                leftSection={
+                                    <span
+                                        dangerouslySetInnerHTML={{
+                                            __html: getIconFromLibrary(button.svgIconKey, svgLibrary)
+                                        }}
+                                        style={{ display: 'flex', alignItems: 'center' }}
+                                    />
+                                }
+                                onClick={() => handleButtonClick(button)}
+                                radius="md"
+                                variant={variant}
+                            >
+                                {t(button.text)}
+                            </Button>
+                        ))}
+                    </Group>
+                )}
+                {alternativeButtons.length > 0 && (
+                    <Group gap="md" wrap="wrap">
+                        {alternativeButtons.map((button, index) => (
+                            <a
+                                className={classes.alternativeLink}
+                                href={button.link}
+                                key={index}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                {t(button.text)}
+                            </a>
+                        ))}
+                    </Group>
+                )}
+            </Stack>
         )
     }
 
@@ -155,10 +187,6 @@ export const InstallationGuideConnector = (props: IProps) => {
         <Card className={classes.guideCard} p={0} radius={0}>
             <Stack gap="md">
                 <Group gap="sm" justify="space-between">
-                    <Title className={classes.guideTitle} fw={700} order={4}>
-                        Выберите приложение
-                    </Title>
-
                     {availablePlatforms.length > 1 && (
                         <NativeSelect
                             data={availablePlatforms.map((opt) => ({
@@ -200,7 +228,9 @@ export const InstallationGuideConnector = (props: IProps) => {
                         <div className={classes.appsGrid}>
                             {platformApps.map((app: TSubscriptionPageAppConfig, index: number) => {
                                 const isActive = index === selectedAppIndex
-                                const hasIcon = Boolean(app.svgIconKey)
+                                const hasIcon =
+                                    (app.name === 'Happ' || app.name === 'INCY') &&
+                                    Boolean(app.svgIconKey)
 
                                 return (
                                     <UnstyledButton
@@ -216,10 +246,8 @@ export const InstallationGuideConnector = (props: IProps) => {
                                     >
                                         {hasIcon && (
                                             <span
-                                                className={clsx(
-                                                    classes.bgIcon,
-                                                    isActive && classes.bgIconActive
-                                                )}
+                                                aria-hidden="true"
+                                                className={classes.appIcon}
                                                 dangerouslySetInnerHTML={{
                                                     __html: getIconFromLibrary(
                                                         app.svgIconKey!,
@@ -229,6 +257,18 @@ export const InstallationGuideConnector = (props: IProps) => {
                                             />
                                         )}
                                         <span className={classes.appName}>{app.name}</span>
+                                        {app.name === 'INCY' && (
+                                            <span className={classes.appBadge}>
+                                                <svg
+                                                    aria-hidden="true"
+                                                    className={classes.appBadgeStar}
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                                </svg>
+                                                советуем
+                                            </span>
+                                        )}
                                     </UnstyledButton>
                                 )
                             })}

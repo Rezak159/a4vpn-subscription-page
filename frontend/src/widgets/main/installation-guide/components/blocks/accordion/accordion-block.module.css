@@ -1,59 +1,5 @@
-.accordionItem {
-    background: #f4ede3;
-    border: 1px solid rgb(22 19 15 / 16%);
-    border-radius: 0;
-}
-
-.accordionItem[data-active] {
-    background: #fffaf2;
-    border-color: #16130f;
-}
-
-.accordionControl {
-    padding: var(--mantine-spacing-sm) var(--mantine-spacing-md);
-    border-radius: 0;
-}
-
-.accordionControl:hover {
-    background: #ebe1d3;
-    border-radius: 0;
-}
-
-.accordionChevron {
-    color: #8a7f70;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-}
-
-.accordionContent {
-    padding: 0 22px 22px 64px;
-
-    will-change: height;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.accordionLabel {
-    padding: 0;
-}
-
-.stepNumber {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: none;
-    width: 34px;
-    height: 34px;
-    color: #f4ede3;
-    background: #16130f;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-}
-
-/* Последний шаг — целевое действие, выделяем красным */
-.stepNumberAction {
-    background: #c81e26;
+.step {
+    padding: 14px 0 20px;
 }
 
 /* Кнопки скачивания внутри шага: не вылезать за карточку, переносить текст */
@@ -62,6 +8,18 @@
     height: auto;
     min-height: 42px;
     padding-block: 8px;
+}
+
+/* Контурные кнопки: заливка только у главного действия последнего шага */
+.blockButtons :global(.mantine-Button-root[data-variant='outline']) {
+    color: #16130f;
+    background: transparent;
+    border: 1px solid #16130f;
+}
+
+.blockButtons :global(.mantine-Button-root[data-variant='outline']:hover) {
+    color: #f4ede3;
+    background: #16130f;
 }
 
 /* Иконка всегда на одном месте: без этого содержимое центрируется целиком
@@ -75,27 +33,21 @@
     text-align: left;
 }
 
+/* Иконки в кнопках шагов: один размер и один цвет у всех */
+.blockButtons :global(.mantine-Button-section) svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Кнопки по размеру текста и по центру шага */
+.blockButtons,
+.blockButtons :global(.mantine-Group-root) {
+    justify-content: center;
+}
+
 @media (max-width: 30em) {
     .blockButtons {
         flex-direction: column;
-        align-items: stretch;
-    }
-
-    .blockButtons :global(.mantine-Button-root) {
-        width: 100%;
-    }
-}
-
-.stepBadge {
-    font-weight: 700;
-    font-size: 10px;
-    padding: 0 6px;
-    min-width: 20px;
-    height: 18px;
-}
-
-@media (max-width: 30em) {
-    .accordionContent {
-        padding-left: 58px;
+        align-items: center;
     }
 }

@@ -1,4 +1,4 @@
-import { ActionIcon, Button, CopyButton, Group, Image, Stack, Text } from '@mantine/core'
+import { Button, CopyButton, Group, Image, Stack, Text } from '@mantine/core'
 import { IconCheck, IconCopy, IconQrcode } from '@tabler/icons-react'
 import { modals } from '@mantine/modals'
 import { renderSVG } from 'uqr'
@@ -48,35 +48,40 @@ export const SubscriptionKeyWidget = () => {
 
     return (
         <section className={classes.section}>
-            <span className={classes.label}>Добавить вручную</span>
+            <Text c="dark.8" className={classes.title} fw={800}>
+                Добавление вручную
+            </Text>
 
-            <Group className={classes.keyRow} gap={0} wrap="nowrap">
-                <span className={classes.key}>{subscriptionUrl}</span>
+            <p className={classes.key}>{subscriptionUrl}</p>
+
+            <Group className={classes.buttons} gap="xs" justify="center" wrap="wrap">
+                <Button
+                    className={classes.button}
+                    leftSection={<IconQrcode size={20} />}
+                    onClick={handleShowQr}
+                    radius={0}
+                    variant="outline"
+                >
+                    Показать QR-код
+                </Button>
+
                 <CopyButton value={subscriptionUrl}>
                     {({ copied, copy }) => (
-                        <ActionIcon
-                            aria-label="Скопировать ключ"
-                            className={classes.copyButton}
+                        <Button
+                            className={classes.button}
+                            leftSection={copied ? <IconCheck size={20} /> : <IconCopy size={20} />}
                             onClick={() => {
                                 vibrate('drop')
                                 copy()
                             }}
                             radius={0}
+                            variant="outline"
                         >
-                            {copied ? <IconCheck size={18} /> : <IconCopy size={18} />}
-                        </ActionIcon>
+                            {copied ? 'Скопировано' : 'Скопировать ключ'}
+                        </Button>
                     )}
                 </CopyButton>
             </Group>
-
-            <Button
-                className={classes.qrButton}
-                leftSection={<IconQrcode size={18} />}
-                onClick={handleShowQr}
-                radius={0}
-            >
-                Показать QR-код
-            </Button>
         </section>
     )
 }

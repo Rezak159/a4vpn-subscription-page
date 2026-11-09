@@ -61,11 +61,36 @@
     border: 1px solid rgb(244, 237, 227, 0.38);
 }
 
+.heroStatus,
+.heroStatusAlert,
 .heroTitle,
+.heroSubtitle,
 .subscriptionMeta,
 .heroCta {
     position: relative;
     z-index: 1;
+}
+
+.heroStatus,
+.heroStatusAlert {
+    display: flex;
+    margin-bottom: 16px;
+    color: #f4ede3;
+}
+
+.heroStatusAlert {
+    color: #c81e26;
+}
+
+.heroSubtitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 0;
+    color: rgb(244 237 227 / 72%);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 .heroTitle {
@@ -146,7 +171,7 @@
     width: 100%;
     max-width: 920px;
     margin: 0 auto;
-    padding: 64px 0 80px;
+    padding: 64px 0 20px;
     scroll-margin-top: 72px;
 }
 
@@ -201,7 +226,7 @@
     }
 
     .setup {
-        padding: 52px 0 60px;
+        padding: 52px 0 20px;
     }
 
     .sectionHeading {

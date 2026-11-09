@@ -19,17 +19,17 @@
               },
               "buttons": [
                 {
-                  "link": "https://apps.apple.com/ru/app/incy/id6756943388",
+                  "link": "https://apps.apple.com/us/app/incy/id6756943388",
                   "text": {
-                    "ru": "App Store"
+                    "ru": "App Store (зарубежный)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "AppStore"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Установите приложение из App Store."
+                "ru": "Установите приложение из App Store.<span style=\"display:flex;align-items:flex-start;gap:8px;margin-top:12px;padding:14px 16px;background:rgb(22 19 15 / 5%);border-left:4px solid #16130f\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#c81e26\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" style=\"flex:0 0 auto;margin-top:1px\"><path d=\"M12 9v4\"/><path d=\"M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.871l-8.106-13.534a1.914 1.914 0 0 0-3.274 0z\"/><path d=\"M12 16h.01\"/></svg><span><b style=\"color:#c81e26;font-weight:500\">Приложение доступно только в зарубежном App Store.</b> В российском лежат чужие приложения с похожим названием.<br><a href=\"https://support.apple.com/ru-ru/118283\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:4px;margin-top:4px;color:#16130f;text-decoration:underline;text-underline-offset:3px\">Как сменить регион<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M17 7l-10 10\"/><path d=\"M8 7h9v9\"/></svg></a></span></span>"
               },
               "svgIconColor": "violet"
             },
@@ -49,12 +49,13 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
           ],
-          "featured": true
+          "featured": true,
+          "svgIconKey": "INCY"
         },
         {
           "name": "Happ",
@@ -70,12 +71,12 @@
                     "ru": "App Store (зарубежный)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "AppStore"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Установите приложение из App Store. <br><br>* Доступно только в зарубежном App Store."
+                "ru": "Установите приложение из App Store.<span style=\"display:flex;align-items:flex-start;gap:8px;margin-top:12px;padding:14px 16px;background:rgb(22 19 15 / 5%);border-left:4px solid #16130f\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#c81e26\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" style=\"flex:0 0 auto;margin-top:1px\"><path d=\"M12 9v4\"/><path d=\"M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.871l-8.106-13.534a1.914 1.914 0 0 0-3.274 0z\"/><path d=\"M12 16h.01\"/></svg><span><b style=\"color:#c81e26;font-weight:500\">Приложение доступно только в зарубежном App Store.</b> В российском лежат чужие приложения с похожим названием.<br><a href=\"https://support.apple.com/ru-ru/118283\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:4px;margin-top:4px;color:#16130f;text-decoration:underline;text-underline-offset:3px\">Как сменить регион<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M17 7l-10 10\"/><path d=\"M8 7h9v9\"/></svg></a></span></span>"
               },
               "svgIconColor": "violet"
             },
@@ -95,7 +96,7 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
@@ -112,6 +113,93 @@
     "linux": {
       "apps": [
         {
+          "name": "INCY",
+          "blocks": [
+            {
+              "title": {
+                "ru": "Установка приложения"
+              },
+              "buttons": [
+                {
+                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-linux-x64.deb",
+                  "text": {
+                    "ru": "x64 (.deb)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                },
+                {
+                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-linux-arm64.deb",
+                  "text": {
+                    "ru": "ARM64 (.deb)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                },
+                {
+                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-linux-x64.rpm",
+                  "text": {
+                    "ru": "x64 (.rpm)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                },
+                {
+                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-linux-arm64.rpm",
+                  "text": {
+                    "ru": "ARM64 (.rpm)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                },
+                {
+                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-linux-x64-portable.zip",
+                  "text": {
+                    "ru": "x64 (portable)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                },
+                {
+                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-linux-arm64-portable.zip",
+                  "text": {
+                    "ru": "ARM64 (portable)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                }
+              ],
+              "svgIconKey": "DownloadIcon",
+              "description": {
+                "ru": "Выберите версию для вашей системы."
+              },
+              "svgIconColor": "cyan"
+            },
+            {
+              "title": {
+                "ru": "Добавление подписки"
+              },
+              "buttons": [
+                {
+                  "link": "incy://import/{{SUBSCRIPTION_LINK}}",
+                  "text": {
+                    "ru": "Добавить подписку"
+                  },
+                  "type": "subscriptionLink",
+                  "svgIconKey": "Plus"
+                }
+              ],
+              "svgIconKey": "CloudDownload",
+              "description": {
+                "ru": "Приложение откроется, подписка добавится сама."
+              },
+              "svgIconColor": "cyan"
+            }
+          ],
+          "featured": true,
+          "svgIconKey": "INCY"
+        },
+        {
           "name": "Happ",
           "blocks": [
             {
@@ -122,15 +210,15 @@
                 {
                   "link": "https://github.com/Happ-proxy/happ-desktop/releases/latest/download/Happ.linux.x64.deb",
                   "text": {
-                    "ru": "Linux"
+                    "ru": "x64 (.deb)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Выберите версию для вашей системы и установите приложение."
+                "ru": "Выберите версию для вашей системы."
               },
               "svgIconColor": "cyan"
             },
@@ -150,12 +238,12 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
           ],
-          "featured": true,
+          "featured": false,
           "svgIconKey": "Happ"
         },
         {
@@ -172,7 +260,7 @@
                     "ru": "amd64 (.deb)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 },
                 {
                   "link": "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClashX-linux-amd64.AppImage",
@@ -180,7 +268,7 @@
                     "ru": "amd64 (AppImage)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 },
                 {
                   "link": "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClashX-linux-amd64.rpm",
@@ -188,7 +276,7 @@
                     "ru": "amd64 (.rpm)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 },
                 {
                   "link": "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClashX-linux-arm64.deb",
@@ -196,12 +284,12 @@
                     "ru": "arm64 (.deb)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Выберите версию для вашей системы и установите приложение."
+                "ru": "Выберите версию для вашей системы."
               },
               "svgIconColor": "cyan"
             },
@@ -221,7 +309,7 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
@@ -243,7 +331,7 @@
                     "ru": "amd64 (.deb)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 },
                 {
                   "link": "https://github.com/coolcoala/clash-verge-rev-lite/releases/latest/download/Koala.Clash.x86_64.rpm",
@@ -251,7 +339,7 @@
                     "ru": "amd64 (.rpm)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 },
                 {
                   "link": "https://github.com/coolcoala/clash-verge-rev-lite/releases/latest/download/Koala.Clash_arm64.deb",
@@ -259,7 +347,7 @@
                     "ru": "arm64 (.deb)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 },
                 {
                   "link": "https://github.com/coolcoala/clash-verge-rev-lite/releases/latest/download/Koala.Clash.aarch64.rpm",
@@ -267,12 +355,12 @@
                     "ru": "arm64 (.rpm)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Выберите версию для вашей системы и установите приложение."
+                "ru": "Выберите версию для вашей системы."
               },
               "svgIconColor": "cyan"
             },
@@ -292,7 +380,7 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
@@ -309,6 +397,69 @@
     "macos": {
       "apps": [
         {
+          "name": "INCY",
+          "blocks": [
+            {
+              "title": {
+                "ru": "Установка приложения"
+              },
+              "buttons": [
+                {
+                  "link": "https://apps.apple.com/us/app/incy/id6756943388",
+                  "text": {
+                    "ru": "App Store (зарубежный)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "AppStore"
+                },
+                {
+                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-macos-arm64.dmg",
+                  "text": {
+                    "ru": "Скачать напрямую (M1 и новее)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                },
+                {
+                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-macos-intel.dmg",
+                  "text": {
+                    "ru": "Скачать напрямую (Intel)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                }
+              ],
+              "svgIconKey": "DownloadIcon",
+              "description": {
+                "ru": "Из App Store или напрямую с сайта разработчика."
+              },
+              "svgIconColor": "cyan"
+            },
+            {
+              "title": {
+                "ru": "Добавление подписки"
+              },
+              "buttons": [
+                {
+                  "link": "incy://import/{{SUBSCRIPTION_LINK}}",
+                  "text": {
+                    "ru": "Добавить подписку"
+                  },
+                  "type": "subscriptionLink",
+                  "svgIconKey": "Plus"
+                }
+              ],
+              "svgIconKey": "CloudDownload",
+              "description": {
+                "ru": "Приложение откроется, подписка добавится сама."
+              },
+              "svgIconColor": "cyan"
+            }
+          ],
+          "featured": true,
+          "svgIconKey": "INCY"
+        },
+        {
           "name": "Happ",
           "blocks": [
             {
@@ -322,12 +473,20 @@
                     "ru": "App Store (зарубежный)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "AppStore"
+                },
+                {
+                  "link": "https://github.com/Happ-proxy/happ-desktop/releases/latest/download/Happ.macOS.universal.dmg",
+                  "text": {
+                    "ru": "Скачать напрямую"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Установите приложение из App Store. <br><br>* Нет в российском App Store — установите INCY."
+                "ru": "Из App Store или напрямую с сайта разработчика."
               },
               "svgIconColor": "cyan"
             },
@@ -347,67 +506,13 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
           ],
           "featured": false,
           "svgIconKey": "Happ"
-        },
-        {
-          "name": "INCY",
-          "blocks": [
-            {
-              "title": {
-                "ru": "Установка приложения"
-              },
-              "buttons": [
-                {
-                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-macos-arm64.dmg",
-                  "text": {
-                    "ru": "Apple Silicon (M-процессоры)"
-                  },
-                  "type": "external",
-                  "svgIconKey": "ExternalLink"
-                },
-                {
-                  "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-macos-intel.dmg",
-                  "text": {
-                    "ru": "Mac Intel"
-                  },
-                  "type": "external",
-                  "svgIconKey": "ExternalLink"
-                }
-              ],
-              "svgIconKey": "DownloadIcon",
-              "description": {
-                "ru": "Выберите версию для вашей системы и установите приложение."
-              },
-              "svgIconColor": "cyan"
-            },
-            {
-              "title": {
-                "ru": "Добавление подписки"
-              },
-              "buttons": [
-                {
-                  "link": "incy://import/{{SUBSCRIPTION_LINK}}",
-                  "text": {
-                    "ru": "Добавить подписку"
-                  },
-                  "type": "subscriptionLink",
-                  "svgIconKey": "Plus"
-                }
-              ],
-              "svgIconKey": "CloudDownload",
-              "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
-              },
-              "svgIconColor": "cyan"
-            }
-          ],
-          "featured": true
         }
       ],
       "svgIconKey": "macOS",
@@ -417,61 +522,6 @@
     },
     "android": {
       "apps": [
-        {
-          "name": "Happ",
-          "blocks": [
-            {
-              "title": {
-                "ru": "Установка приложения"
-              },
-              "buttons": [
-                {
-                  "link": "https://play.google.com/store/apps/details?id=com.happproxy",
-                  "text": {
-                    "ru": "Открыть в Google Play"
-                  },
-                  "type": "external",
-                  "svgIconKey": "ExternalLink"
-                },
-                {
-                  "link": "https://github.com/Happ-proxy/happ-android/releases/latest/download/Happ.apk",
-                  "text": {
-                    "ru": "Скачать APK"
-                  },
-                  "type": "external",
-                  "svgIconKey": "ExternalLink"
-                }
-              ],
-              "svgIconKey": "DownloadIcon",
-              "description": {
-                "ru": "Установите приложение из Google Play или скачайте APK, если он недоступен."
-              },
-              "svgIconColor": "cyan"
-            },
-            {
-              "title": {
-                "ru": "Добавление подписки"
-              },
-              "buttons": [
-                {
-                  "link": "{{HAPP_CRYPT4_LINK}}",
-                  "text": {
-                    "ru": "Добавить подписку"
-                  },
-                  "type": "subscriptionLink",
-                  "svgIconKey": "Plus"
-                }
-              ],
-              "svgIconKey": "CloudDownload",
-              "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
-              },
-              "svgIconColor": "cyan"
-            }
-          ],
-          "featured": true,
-          "svgIconKey": "Happ"
-        },
         {
           "name": "INCY",
           "blocks": [
@@ -483,10 +533,10 @@
                 {
                   "link": "https://play.google.com/store/apps/details?id=llc.itdev.incy",
                   "text": {
-                    "ru": "Google Play"
+                    "ru": "Загрузить в Google Play"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "GooglePlay"
                 },
                 {
                   "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/Incy.apk",
@@ -494,12 +544,12 @@
                     "ru": "Скачать APK"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Установите приложение из Google Play или скачайте APK, если он недоступен."
+                "ru": "Установите из Google Play. Если недоступен, скачайте APK."
               },
               "svgIconColor": "violet"
             },
@@ -519,12 +569,68 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
           ],
-          "featured": false
+          "featured": true,
+          "svgIconKey": "INCY"
+        },
+        {
+          "name": "Happ",
+          "blocks": [
+            {
+              "title": {
+                "ru": "Установка приложения"
+              },
+              "buttons": [
+                {
+                  "link": "https://play.google.com/store/apps/details?id=com.happproxy",
+                  "text": {
+                    "ru": "Загрузить в Google Play"
+                  },
+                  "type": "external",
+                  "svgIconKey": "GooglePlay"
+                },
+                {
+                  "link": "https://github.com/Happ-proxy/happ-android/releases/latest/download/Happ.apk",
+                  "text": {
+                    "ru": "Скачать APK"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                }
+              ],
+              "svgIconKey": "DownloadIcon",
+              "description": {
+                "ru": "Установите из Google Play. Если недоступен, скачайте APK."
+              },
+              "svgIconColor": "cyan"
+            },
+            {
+              "title": {
+                "ru": "Добавление подписки"
+              },
+              "buttons": [
+                {
+                  "link": "{{HAPP_CRYPT4_LINK}}",
+                  "text": {
+                    "ru": "Добавить подписку"
+                  },
+                  "type": "subscriptionLink",
+                  "svgIconKey": "Plus"
+                }
+              ],
+              "svgIconKey": "CloudDownload",
+              "description": {
+                "ru": "Приложение откроется, подписка добавится сама."
+              },
+              "svgIconColor": "cyan"
+            }
+          ],
+          "featured": false,
+          "svgIconKey": "Happ"
         }
       ],
       "svgIconKey": "Android",
@@ -534,6 +640,53 @@
     },
     "appleTV": {
       "apps": [
+        {
+          "name": "INCY",
+          "blocks": [
+            {
+              "title": {
+                "ru": "Установка приложения"
+              },
+              "buttons": [
+                {
+                  "link": "https://apps.apple.com/us/app/incy/id6756943388",
+                  "text": {
+                    "ru": "App Store (зарубежный)"
+                  },
+                  "type": "external",
+                  "svgIconKey": "AppStore"
+                }
+              ],
+              "svgIconKey": "DownloadIcon",
+              "description": {
+                "ru": "Установите приложение из App Store.<span style=\"display:flex;align-items:flex-start;gap:8px;margin-top:12px;padding:14px 16px;background:rgb(22 19 15 / 5%);border-left:4px solid #16130f\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#c81e26\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" style=\"flex:0 0 auto;margin-top:1px\"><path d=\"M12 9v4\"/><path d=\"M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.871l-8.106-13.534a1.914 1.914 0 0 0-3.274 0z\"/><path d=\"M12 16h.01\"/></svg><span><b style=\"color:#c81e26;font-weight:500\">Приложение доступно только в зарубежном App Store.</b> В российском лежат чужие приложения с похожим названием.<br><a href=\"https://support.apple.com/ru-ru/118283\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:4px;margin-top:4px;color:#16130f;text-decoration:underline;text-underline-offset:3px\">Как сменить регион<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M17 7l-10 10\"/><path d=\"M8 7h9v9\"/></svg></a></span></span>"
+              },
+              "svgIconColor": "violet"
+            },
+            {
+              "title": {
+                "ru": "Добавление подписки"
+              },
+              "buttons": [
+                {
+                  "link": "incy://import/{{SUBSCRIPTION_LINK}}",
+                  "text": {
+                    "ru": "Добавить подписку"
+                  },
+                  "type": "subscriptionLink",
+                  "svgIconKey": "Plus"
+                }
+              ],
+              "svgIconKey": "CloudDownload",
+              "description": {
+                "ru": "Приложение откроется, подписка добавится сама."
+              },
+              "svgIconColor": "cyan"
+            }
+          ],
+          "featured": true,
+          "svgIconKey": "INCY"
+        },
         {
           "name": "Happ",
           "blocks": [
@@ -545,15 +698,15 @@
                 {
                   "link": "https://apps.apple.com/us/app/happ-proxy-utility-for-tv/id6748297274",
                   "text": {
-                    "ru": "App Store"
+                    "ru": "App Store (зарубежный)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "AppStore"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Установите приложение из App Store."
+                "ru": "Установите приложение из App Store.<span style=\"display:flex;align-items:flex-start;gap:8px;margin-top:12px;padding:14px 16px;background:rgb(22 19 15 / 5%);border-left:4px solid #16130f\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#c81e26\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" style=\"flex:0 0 auto;margin-top:1px\"><path d=\"M12 9v4\"/><path d=\"M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.871l-8.106-13.534a1.914 1.914 0 0 0-3.274 0z\"/><path d=\"M12 16h.01\"/></svg><span><b style=\"color:#c81e26;font-weight:500\">Приложение доступно только в зарубежном App Store.</b> В российском лежат чужие приложения с похожим названием.<br><a href=\"https://support.apple.com/ru-ru/118283\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:4px;margin-top:4px;color:#16130f;text-decoration:underline;text-underline-offset:3px\">Как сменить регион<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M17 7l-10 10\"/><path d=\"M8 7h9v9\"/></svg></a></span></span>"
               },
               "svgIconColor": "cyan"
             },
@@ -573,59 +726,13 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
           ],
           "featured": false,
           "svgIconKey": "Happ"
-        },
-        {
-          "name": "INCY",
-          "blocks": [
-            {
-              "title": {
-                "ru": "Установка приложения"
-              },
-              "buttons": [
-                {
-                  "link": "https://apps.apple.com/ru/app/incy/id6756943388",
-                  "text": {
-                    "ru": "App Store"
-                  },
-                  "type": "external",
-                  "svgIconKey": "ExternalLink"
-                }
-              ],
-              "svgIconKey": "DownloadIcon",
-              "description": {
-                "ru": "Установите приложение из App Store."
-              },
-              "svgIconColor": "violet"
-            },
-            {
-              "title": {
-                "ru": "Добавление подписки"
-              },
-              "buttons": [
-                {
-                  "link": "incy://import/{{SUBSCRIPTION_LINK}}",
-                  "text": {
-                    "ru": "Добавить подписку"
-                  },
-                  "type": "subscriptionLink",
-                  "svgIconKey": "Plus"
-                }
-              ],
-              "svgIconKey": "CloudDownload",
-              "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
-              },
-              "svgIconColor": "cyan"
-            }
-          ],
-          "featured": true
         }
       ],
       "svgIconKey": "TV",
@@ -635,53 +742,6 @@
     },
     "windows": {
       "apps": [
-        {
-          "name": "Happ",
-          "blocks": [
-            {
-              "title": {
-                "ru": "Установка приложения"
-              },
-              "buttons": [
-                {
-                  "link": "https://github.com/Happ-proxy/happ-desktop/releases/latest/download/setup-Happ.x64.exe",
-                  "text": {
-                    "ru": "Windows"
-                  },
-                  "type": "external",
-                  "svgIconKey": "ExternalLink"
-                }
-              ],
-              "svgIconKey": "DownloadIcon",
-              "description": {
-                "ru": "Выберите версию для вашей системы и установите приложение."
-              },
-              "svgIconColor": "cyan"
-            },
-            {
-              "title": {
-                "ru": "Добавление подписки"
-              },
-              "buttons": [
-                {
-                  "link": "{{HAPP_CRYPT4_LINK}}",
-                  "text": {
-                    "ru": "Добавить подписку"
-                  },
-                  "type": "subscriptionLink",
-                  "svgIconKey": "Plus"
-                }
-              ],
-              "svgIconKey": "CloudDownload",
-              "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
-              },
-              "svgIconColor": "cyan"
-            }
-          ],
-          "featured": false,
-          "svgIconKey": "Happ"
-        },
         {
           "name": "INCY",
           "blocks": [
@@ -693,15 +753,15 @@
                 {
                   "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/incy-windows-setup.exe",
                   "text": {
-                    "ru": "Установщик Windows"
+                    "ru": "Скачать напрямую"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Выберите версию для вашей системы и установите приложение."
+                "ru": "Скачайте напрямую с сайта разработчика."
               },
               "svgIconColor": "cyan"
             },
@@ -721,12 +781,60 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
           ],
-          "featured": true
+          "featured": true,
+          "svgIconKey": "INCY"
+        },
+        {
+          "name": "Happ",
+          "blocks": [
+            {
+              "title": {
+                "ru": "Установка приложения"
+              },
+              "buttons": [
+                {
+                  "link": "https://github.com/Happ-proxy/happ-desktop/releases/latest/download/setup-Happ.x64.exe",
+                  "text": {
+                    "ru": "Скачать напрямую"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                }
+              ],
+              "svgIconKey": "DownloadIcon",
+              "description": {
+                "ru": "Скачайте напрямую с сайта разработчика."
+              },
+              "svgIconColor": "cyan"
+            },
+            {
+              "title": {
+                "ru": "Добавление подписки"
+              },
+              "buttons": [
+                {
+                  "link": "{{HAPP_CRYPT4_LINK}}",
+                  "text": {
+                    "ru": "Добавить подписку"
+                  },
+                  "type": "subscriptionLink",
+                  "svgIconKey": "Plus"
+                }
+              ],
+              "svgIconKey": "CloudDownload",
+              "description": {
+                "ru": "Приложение откроется, подписка добавится сама."
+              },
+              "svgIconColor": "cyan"
+            }
+          ],
+          "featured": false,
+          "svgIconKey": "Happ"
         },
         {
           "name": "FlClashX",
@@ -739,23 +847,23 @@
                 {
                   "link": "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClashX-windows-amd64-setup.exe",
                   "text": {
-                    "ru": "Windows (Установщик)"
+                    "ru": "Скачать напрямую"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 },
                 {
                   "link": "https://github.com/pluralplay/FlClashX/releases/latest/download/FlClashX-windows-arm64-setup.exe",
                   "text": {
-                    "ru": "Windows на ARM (Установщик)"
+                    "ru": "Скачать напрямую (ARM)"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Выберите версию для вашей системы и установите приложение."
+                "ru": "Скачайте напрямую с сайта разработчика."
               },
               "svgIconColor": "cyan"
             },
@@ -775,7 +883,7 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
@@ -792,61 +900,6 @@
     "androidTV": {
       "apps": [
         {
-          "name": "Happ",
-          "blocks": [
-            {
-              "title": {
-                "ru": "Установка приложения"
-              },
-              "buttons": [
-                {
-                  "link": "https://play.google.com/store/apps/details?id=com.happproxy",
-                  "text": {
-                    "ru": "Открыть в Google Play"
-                  },
-                  "type": "external",
-                  "svgIconKey": "ExternalLink"
-                },
-                {
-                  "link": "https://github.com/Happ-proxy/happ-android/releases/latest/download/Happ.apk",
-                  "text": {
-                    "ru": "Скачать APK"
-                  },
-                  "type": "external",
-                  "svgIconKey": "ExternalLink"
-                }
-              ],
-              "svgIconKey": "DownloadIcon",
-              "description": {
-                "ru": "Установите приложение из Google Play или скачайте APK, если он недоступен."
-              },
-              "svgIconColor": "cyan"
-            },
-            {
-              "title": {
-                "ru": "Добавление подписки"
-              },
-              "buttons": [
-                {
-                  "link": "{{HAPP_CRYPT4_LINK}}",
-                  "text": {
-                    "ru": "Добавить подписку"
-                  },
-                  "type": "subscriptionLink",
-                  "svgIconKey": "Plus"
-                }
-              ],
-              "svgIconKey": "CloudDownload",
-              "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
-              },
-              "svgIconColor": "cyan"
-            }
-          ],
-          "featured": false,
-          "svgIconKey": "Happ"
-        },
-        {
           "name": "INCY",
           "blocks": [
             {
@@ -857,10 +910,10 @@
                 {
                   "link": "https://play.google.com/store/apps/details?id=llc.itdev.incy",
                   "text": {
-                    "ru": "Google Play"
+                    "ru": "Загрузить в Google Play"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "GooglePlay"
                 },
                 {
                   "link": "https://github.com/INCY-DEV/incy-platforms/releases/latest/download/Incy.apk",
@@ -868,12 +921,12 @@
                     "ru": "Скачать APK"
                   },
                   "type": "external",
-                  "svgIconKey": "ExternalLink"
+                  "svgIconKey": "DownloadIcon"
                 }
               ],
               "svgIconKey": "DownloadIcon",
               "description": {
-                "ru": "Установите приложение из Google Play или скачайте APK, если он недоступен."
+                "ru": "Установите из Google Play. Если недоступен, скачайте APK."
               },
               "svgIconColor": "violet"
             },
@@ -893,12 +946,68 @@
               ],
               "svgIconKey": "CloudDownload",
               "description": {
-                "ru": "Нажмите кнопку ниже — приложение откроется и подписка добавится автоматически."
+                "ru": "Приложение откроется, подписка добавится сама."
               },
               "svgIconColor": "cyan"
             }
           ],
-          "featured": true
+          "featured": true,
+          "svgIconKey": "INCY"
+        },
+        {
+          "name": "Happ",
+          "blocks": [
+            {
+              "title": {
+                "ru": "Установка приложения"
+              },
+              "buttons": [
+                {
+                  "link": "https://play.google.com/store/apps/details?id=com.happproxy",
+                  "text": {
+                    "ru": "Загрузить в Google Play"
+                  },
+                  "type": "external",
+                  "svgIconKey": "GooglePlay"
+                },
+                {
+                  "link": "https://github.com/Happ-proxy/happ-android/releases/latest/download/Happ.apk",
+                  "text": {
+                    "ru": "Скачать APK"
+                  },
+                  "type": "external",
+                  "svgIconKey": "DownloadIcon"
+                }
+              ],
+              "svgIconKey": "DownloadIcon",
+              "description": {
+                "ru": "Установите из Google Play. Если недоступен, скачайте APK."
+              },
+              "svgIconColor": "cyan"
+            },
+            {
+              "title": {
+                "ru": "Добавление подписки"
+              },
+              "buttons": [
+                {
+                  "link": "{{HAPP_CRYPT4_LINK}}",
+                  "text": {
+                    "ru": "Добавить подписку"
+                  },
+                  "type": "subscriptionLink",
+                  "svgIconKey": "Plus"
+                }
+              ],
+              "svgIconKey": "CloudDownload",
+              "description": {
+                "ru": "Приложение откроется, подписка добавится сама."
+              },
+              "svgIconColor": "cyan"
+            }
+          ],
+          "featured": false,
+          "svgIconKey": "Happ"
         }
       ],
       "svgIconKey": "TV",
@@ -948,7 +1057,10 @@
     "DownloadIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2\" /><path d=\"M7 11l5 5l5 -5\" /><path d=\"M12 4l0 12\" /></svg>",
     "ExternalLink": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6\" /><path d=\"M11 13l9 -9\" /><path d=\"M15 4h5v5\" /></svg>",
     "Shadowrocket": "<svg width=\"50\" height=\"50\" viewBox=\"0 0 50 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M21.2394 36.832L16.5386 39.568C16.5386 39.568 13.7182 36.832 11.8379 33.184C9.95756 29.536 16.5386 23.152 16.5386 23.152M21.2394 36.832H28.7606M21.2394 36.832C21.2394 36.832 15.5985 24.064 17.4788 16.768C19.3591 9.472 25 4 25 4C25 4 30.6409 9.472 32.5212 16.768C34.4015 24.064 28.7606 36.832 28.7606 36.832M28.7606 36.832L33.4614 39.568C33.4614 39.568 36.2818 36.832 38.1621 33.184C40.0424 29.536 33.4614 23.152 33.4614 23.152M25 46L26.8803 40.528H23.1197L25 46ZM25.9402 17.68C26.4594 18.1837 26.4594 19.0003 25.9402 19.504C25.4209 20.0077 24.5791 20.0077 24.0598 19.504C23.5406 19.0003 23.5406 18.1837 24.0598 17.68C24.5791 17.1763 25.4209 17.1763 25.9402 17.68Z\" stroke=\"#FAFAFA\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>\n",
-    "CloudDownload": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M19 18a3.5 3.5 0 0 0 0 -7h-1a5 4.5 0 0 0 -11 -2a4.6 4.4 0 0 0 -2.1 8.4\" /><path d=\"M12 13l0 9\" /><path d=\"M9 19l3 3l3 -3\" /></svg>"
+    "CloudDownload": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M19 18a3.5 3.5 0 0 0 0 -7h-1a5 4.5 0 0 0 -11 -2a4.6 4.4 0 0 0 -2.1 8.4\" /><path d=\"M12 13l0 9\" /><path d=\"M9 19l3 3l3 -3\" /></svg>",
+    "INCY": "<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" data-colors=\"own\"><path d=\"M24 2H76A22 22 0 0 1 98 24V76A22 22 0 0 1 76 98H24A22 22 0 0 1 2 76V24A22 22 0 0 1 24 2Z\" fill=\"#0f4a24\"/><path d=\"M55.4 60.85C50.17 60.29 46.31 56.87 45.4 51.99C45.21 50.98 45.23 48.41 45.43 47.46C45.82 45.65 46.52 44.16 47.64 42.77C50.47 39.26 55.63 37.83 60.54 39.21C61.71 39.53 62.89 40.09 63.9 40.81C64.58 41.3 65.76 42.46 65.76 42.66C65.76 42.81 65.37 43.19 63.27 45.1C62.67 45.65 62.14 46.09 62.08 46.09C62.03 46.09 61.88 45.96 61.74 45.8C61.12 45.04 59.72 44.16 58.66 43.88C57.5 43.56 55.84 43.67 54.67 44.15C51.89 45.27 50.58 48.48 51.5 51.89C52.02 53.83 53.58 55.29 55.64 55.77C56.31 55.93 57.83 55.93 58.48 55.77C59.62 55.5 60.59 54.94 61.53 54.03C61.82 53.75 62.09 53.52 62.12 53.52C62.18 53.52 62.93 54.19 64.7 55.82C65.37 56.44 65.76 56.84 65.76 56.92C65.76 57.21 64.57 58.34 63.54 59.03C61.38 60.48 58.34 61.16 55.4 60.85ZM11.9 60.41L11.78 60.35L11.78 49.86C11.78 42.89 11.81 39.34 11.85 39.26L11.92 39.13L14.7 39.13C16.3 39.13 17.52 39.16 17.58 39.19C17.66 39.25 17.68 40.5 17.69 49.76L17.71 60.28L17.61 60.38C17.48 60.5 12.11 60.53 11.9 60.41ZM22.08 60.4C22.02 60.34 22.01 57.91 22.01 49.83L22.01 39.33L22.11 39.23C22.2 39.14 22.5 39.13 24.48 39.13L26.74 39.13L26.91 39.26C27.01 39.34 27.57 40 28.17 40.74C28.77 41.48 29.37 42.2 29.49 42.35C29.62 42.5 30.09 43.07 30.53 43.62C30.98 44.17 31.77 45.13 32.29 45.77C33.29 46.98 34.38 48.32 35.37 49.53C35.95 50.23 36.14 50.37 36.22 50.16C36.25 50.1 36.26 47.63 36.26 44.67C36.26 40.57 36.28 39.27 36.34 39.21C36.4 39.15 37.12 39.13 39.17 39.13L41.93 39.13L41.99 39.29C42.08 39.53 42.08 60.19 41.99 60.36L41.92 60.48L39.61 60.48C38.28 60.48 37.25 60.46 37.18 60.42C37.12 60.39 36.64 59.84 36.13 59.2C35.61 58.57 34.9 57.7 34.54 57.26C34.18 56.83 33.65 56.18 33.37 55.83C33.08 55.47 32.54 54.81 32.16 54.36C31.44 53.49 29.65 51.29 28.86 50.31C28.61 49.99 28.3 49.63 28.19 49.5C27.78 49.06 27.8 48.84 27.8 54.89L27.8 60.35L27.67 60.41C27.48 60.52 22.19 60.51 22.08 60.4ZM73.86 60.42C73.84 60.38 73.82 58.71 73.83 56.7C73.83 54.25 73.81 52.97 73.76 52.79C73.72 52.65 73.35 51.95 72.92 51.25C71.96 49.63 71.4 48.68 71.35 48.6C71.31 48.51 70.43 47.03 69.99 46.29C69.78 45.95 69.45 45.39 69.25 45.05C68.81 44.29 68.33 43.46 67.09 41.37C66.01 39.55 65.86 39.28 65.92 39.19C65.94 39.15 67.1 39.13 68.97 39.13L71.99 39.13L72.08 39.24C72.14 39.3 72.57 40.01 73.05 40.82C73.52 41.63 74.04 42.49 74.19 42.74C74.48 43.23 74.92 43.98 76.14 46.06C76.56 46.78 76.92 47.39 76.95 47.41C77.05 47.52 77.2 47.37 77.54 46.79C77.73 46.46 78.24 45.59 78.68 44.86C79.11 44.12 79.64 43.23 79.85 42.87C81.56 39.94 82.01 39.23 82.14 39.16C82.22 39.12 83.26 39.1 84.98 39.11L87.7 39.13L87.7 39.26C87.7 39.39 87.42 39.88 85.68 42.81C85.29 43.45 84.47 44.84 83.85 45.9C82.67 47.92 82.38 48.41 82.09 48.89C82 49.05 81.53 49.85 81.06 50.65C80.58 51.46 80.1 52.26 79.99 52.44L79.79 52.77L79.77 56.54C79.75 59.16 79.73 60.34 79.68 60.4C79.59 60.5 73.93 60.52 73.86 60.42Z\" fill=\"#52d76d\"/></svg>",
+    "AppStore": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M8.8086 14.9194l6.1107-11.0368c.0837-.1513.1682-.302.2437-.4584.0685-.142.1267-.2854.1646-.4403.0803-.3259.0588-.6656-.066-.9767-.1238-.3095-.3417-.5678-.6201-.7355a1.4175 1.4175 0 0 0-.921-.1924c-.3207.043-.6135.1935-.8443.4288-.1094.1118-.1996.2361-.2832.369-.092.1463-.175.2979-.259.4492l-.3864.6979-.3865-.6979c-.0837-.1515-.1667-.303-.2587-.4492-.0837-.1329-.1739-.2572-.2835-.369-.2305-.2353-.5233-.3857-.844-.429a1.4181 1.4181 0 0 0-.921.1926c-.2784.1677-.4964.426-.6203.7355-.1246.311-.1461.6508-.066.9767.038.155.0962.2984.1648.4403.0753.1564.1598.307.2437.4584l1.248 2.2543-4.8625 8.7825H2.0295c-.1676 0-.3351-.0007-.5026.0092-.1522.009-.3004.0284-.448.0714-.3108.0906-.5822.2798-.7783.548-.195.2665-.3006.5929-.3006.9279 0 .3352.1057.6612.3006.9277.196.2683.4675.4575.7782.548.1477.043.296.0623.4481.0715.1675.01.335.009.5026.009h13.0974c.0171-.0357.059-.1294.1-.2697.415-1.4151-.6156-2.843-2.0347-2.843zM3.113 18.5418l-.7922 1.5008c-.0818.1553-.1644.31-.2384.4705-.067.1458-.124.293-.1611.452-.0785.3346-.0576.6834.0645 1.0029.1212.3175.3346.583.607.7549.2727.172.5891.2416.9013.1975.3139-.044.6005-.1986.8263-.4402.1072-.1148.1954-.2424.2772-.3787.0902-.1503.1714-.3059.2535-.4612L6 19.4636c-.0896-.149-.9473-1.4704-2.887-.9218m20.5861-3.0056a1.4707 1.4707 0 0 0-.779-.5407c-.1476-.0425-.2961-.0616-.4483-.0705-.1678-.0099-.3352-.0091-.503-.0091H18.648l-4.3891-7.817c-.6655.7005-.9632 1.485-1.0773 2.1976-.1655 1.0333.0367 2.0934.546 3.0004l5.2741 9.3933c.084.1494.167.299.2591.4435.0837.131.1739.2537.2836.364.231.2323.5238.3809.8449.4232.3192.0424.643-.0244.9217-.1899.2784-.1653.4968-.4204.621-.7257.1246-.3072.146-.6425.0658-.9641-.0381-.1529-.0962-.2945-.165-.4346-.0753-.1543-.1598-.303-.2438-.4524l-1.216-2.1662h1.596c.1677 0 .3351.0009.5029-.009.1522-.009.3007-.028.4483-.0705a1.4707 1.4707 0 0 0 .779-.5407A1.5386 1.5386 0 0 0 24 16.452a1.539 1.539 0 0 0-.3009-.9158Z\"/></svg>",
+    "GooglePlay": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z\"/></svg>"
   },
   "baseSettings": {
     "metaTitle": "A4VPN",
